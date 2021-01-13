@@ -1,14 +1,10 @@
-const express = require("express");
+const http = require("http"); //Wiring
 
-const app = express();
-
-app.get("/", function (req, res) {
-  res.end("Welcome to my site!");
+const server = http.createServer((req, res) => {
+  console.log(`Hello!, thanx for visiting!! ${req.url}`);
+  if (req.url !== "/") res.end("404");
+  res.end("Okay bye!");
 });
 
-app.get("/lol", function (req, res) {
-  res.end("You look nice today");
-});
-
-app.listen(3000);
-console.log("listening on http://localhost:3000");
+console.log("listening at http://localhost:3000");
+server.listen(3000);
