@@ -1,7 +1,7 @@
-import popmotion from "popmotion";
-const { styler, value, listen, pointer, spring } = popmotion;
+// import popmotion from "popmotion";
+const { styler, value, listen, pointer, spring } = window.popmotion;
 
-require("./anotherfile");
+// require("./anotherfile");
 const ball = document.querySelector(".box");
 const divStyler = styler(ball);
 const ballXY = value({ x: 0, y: 0 }, divStyler.set);
